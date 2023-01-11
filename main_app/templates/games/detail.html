@@ -7,6 +7,10 @@
   <div class="card-content">
     <span class="card-title">The last time I played <u><strong>{{ game.title }}</strong></u>...</span>
     <p>{{ game.progress|linebreaks }}</p>
+    <div class="card-action">
+      <a href="{% url 'games_update' game.id %}">Update My Progress</a>
+      <a href="{% url 'games_delete' game.id %}">Remove From My Shelf</a>
+    </div>
   </div>
 </div>
 
