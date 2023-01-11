@@ -5,6 +5,7 @@ class Game(models.Model):
   title = models.CharField(max_length=150)
   description = models.CharField(max_length=250)
   progress = models.CharField(max_length=300)
+  platform=models.CharField(max_length=50)
   # rating = models.IntegerChoices()
 
   def __str__(self): 

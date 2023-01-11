@@ -2,15 +2,18 @@
 {% block content %}
 
 <h1>My Shelf:</h1>
+<p>Click a game to see where you left off</p>
 
 {% for game in games %}
-<div class="card">
-  <a href="{% url 'detail' game.id %}">
+<div class="card  brown lighten-5 ">
   <div class="card-content">
-    <span class="card-title">{{ game.title }}</span>
-    <p>{{ game.description}}</p>
+    <a href="{% url 'detail' game.id %}">
+      <span class="card-title">{{ game.title }}</span>
+    </a>
+    <p>({{ game.platform }})</p>
+    <br>
+    <p>{{ game.description }}</p>
   </div>
-  </a>
 </div>
 {% endfor %}
 

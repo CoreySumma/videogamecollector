@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Game Details</h1>
+<h1>Where were we?</h1>
 
-<div class="card">
+<div class="card brown lighten-5 z-depth-5 flow-text">
   <div class="card-content">
-    <span class="card-title">{{ game.title }}</span>
-    <p>Progress: {{ game.progress|linebreaks }}</p>
+    <span class="card-title">The last time I played {{ game.title }} I was...</span>
+    <p>{{ game.progress|linebreaks }}</p>
   </div>
 </div>
 
