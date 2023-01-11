@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Game
 
 games = [
@@ -27,3 +28,9 @@ def games_detail(request, game_id):
   return render(request, 'games/detail.html', {
     'game': game
   })
+
+class GameCreate(CreateView):
+  model = Game
+  fields = '__all__' 
+  success_url = '/games'
+  # ALTERNATIVE ---> fields = ['title', ect ect]

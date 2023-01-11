@@ -7,5 +7,7 @@ urlpatterns = [
   # ALL GAMES
   path('games/', views.games_index, name='index'),
   # GAME DETAIL
-  path('games/<int:game_id>/', views.games_detail, name='detail')
+  path('games/<int:game_id>/', views.games_detail, name='detail'),
+  # CREATE NEW GAME ----> CBV
+  path('games/create/', views.GameCreate.as_view(), name='games_create')
 ]
