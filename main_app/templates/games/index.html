@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>My Shelf:</h1>
+
+{% for game in games %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ game.title }}</span>
+      <p>Description: {{ game.description }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
