@@ -1,12 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Game
-
-games = [
-  {'title' : 'Demon Souls', 'description' : 'An action role-playing game where players take on the role of an adventurer, whose gender and appearance are customized at the beginning of the game, exploring the cursed land of Boletaria.'},
-  {'title' : 'Little Nightmares 2', 'description' : 'A suspense adventure game in which you play as Mono, a young boy trapped in a world that has been distorted by an evil transmission.'},
-  {'title' : 'World of Warcraft', 'description' : 'Set in the fictional world of Azeroth, WoW allows players to create avatar-style characters and explore a sprawling universe while interacting with other players'},
-]
 
 # Create your views here.
 # Define the home view
@@ -42,3 +36,9 @@ class GameUpdate(UpdateView):
 class GameDelete(DeleteView):
   model = Game
   success_url = '/games'
+
+def assoc_game(request, game_id):
+  game = Game.objects.get(id=game_id)
+  game.playing=True
+  game.save()
+  return redirect('index')

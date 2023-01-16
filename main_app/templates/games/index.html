@@ -1,20 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>My Shelf:</h1>
+<h1>On My Shelf:</h1>
 <p>Click a game to see where you left off</p>
 
 {% for game in games %}
-<div class="card  brown lighten-5 ">
-  <div class="card-content">
-    <a href="{% url 'detail' game.id %}">
-      <span class="card-title">{{ game.title }}</span>
-    </a>
-    <p>({{ game.platform }})</p>
-    <br>
-    <p>{{ game.description }}</p>
-  </div>
-</div>
+  {% if game.playing %}
+    <div class="card blue lighten-4 ">
+      <div class="card-content">
+        <a href="{% url 'detail' game.id %}">
+          <span class="card-title">{{ game.title }}</span>
+        </a>
+        <p>({{ game.platform }})</p>
+        <br>
+        <p>{{ game.description }}</p>
+      </div>
+    </div>
+  {% endif %}
 {% endfor %}
+
+<div class="col s6">
+  <h1>Off My Shelf</h1>
+  {% for game in games %}
+    {% if not game.playing %}
+      <div class="card">
+        <div class="card-content">
+          <a href="{% url 'detail' game.id %}">
+            <span class="card-title ">{{ game.title }}</span>
+          </a>
+          <p>({{ game.platform }})</p>
+          <br>
+          <p>{{ game.description }}</p>
+        </div>
+        <div class="card-action">
+          <form action="{% url 'assoc_game' game_id=game.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn">I wanna play this!</button>
+          </form>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
 
 {% endblock %}

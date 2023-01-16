@@ -13,5 +13,8 @@ urlpatterns = [
   # UPDATE GAME ---> CBV
   path('games/<int:pk>/update/', views.GameUpdate.as_view(), name='games_update'),
   # DELETE GAME ---> CBV
-  path('games/<int:pk>/delete', views.GameDelete.as_view(), name='games_delete')
+  path('games/<int:pk>/delete', views.GameDelete.as_view(), name='games_delete'),
+  # ASSOCIATE PLAYING (not class based)
+  path('games/<int:game_id>/assoc_game/', views.assoc_game, name='assoc_game'),
+  # UNASSOCIATE PLAYING (also not class based)
 ]

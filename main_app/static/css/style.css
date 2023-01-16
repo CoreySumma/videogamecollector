@@ -1,11 +1,11 @@
-/* html {
-  background-image: url("../images/videogameshelfBG.png");
-} */
 
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  /* background-image: url("../images/controller.png");
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 main {

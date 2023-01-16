@@ -10,11 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper blue-grey darken-2">
+      <div class="nav-wrapper grey darken-4">
         <ul>
           <li><a href="/" class="center brand-logo">Videogame Shelf</a></li>
         </ul>
@@ -23,6 +24,9 @@
           <li><a href="{% url 'games_create' %}">Add Game</a></li>
           <li><a href="{% url 'index' %}">My Games</a></li>
         </ul>
+        <ul class="left">
+          <a href="javascript:history.back()">Back</a>
+        </ul>>
       </div>
     </nav>
   </header>
