@@ -17,4 +17,5 @@ urlpatterns = [
   # ASSOCIATE PLAYING (not class based)
   path('games/<int:game_id>/assoc_game/', views.assoc_game, name='assoc_game'),
   # UNASSOCIATE PLAYING (also not class based)
+  path('games/<int:game_id>/unassoc_game/', views.unassoc_game, name='unassoc_game'),
 ]

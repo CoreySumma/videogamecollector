@@ -4,7 +4,7 @@ from .models import Game
 
 # Create your views here.
 # Define the home view
-# **REMINDER** Include an .html file extension
+
 def home(request):
   return render(request, 'home.html')
 
@@ -40,5 +40,11 @@ class GameDelete(DeleteView):
 def assoc_game(request, game_id):
   game = Game.objects.get(id=game_id)
   game.playing=True
+  game.save()
+  return redirect('index')
+
+def unassoc_game(request, game_id):
+  game = Game.objects.get(id=game_id)
+  game.playing=False
   game.save()
   return redirect('index')

@@ -15,6 +15,12 @@
         <br>
         <p>{{ game.description }}</p>
       </div>
+      <div class="card-action">
+        <form action="{% url 'unassoc_game' game_id=game.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">I am done with this game</button>
+        </form>
+      </div>
     </div>
   {% endif %}
 {% endfor %}
