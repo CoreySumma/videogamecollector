@@ -17,3 +17,15 @@ footer.page-footer {
   text-align: right;
 }
 
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_image {
+  width: 50%;
+  height: auto;
+}
+

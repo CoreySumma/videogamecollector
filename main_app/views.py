@@ -25,9 +25,9 @@ def games_detail(request, game_id):
 
 class GameCreate(CreateView):
   model = Game
-  fields = '__all__' 
+  fields = ['title', 'description', 'progress', 'platform'] 
   success_url = '/games'
-  # ALTERNATIVE ---> fields = ['title', ect ect]
+  # ALTERNATIVE ---> fields = '__all__' 
 
 class GameUpdate(UpdateView):
   model = Game

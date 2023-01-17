@@ -2,8 +2,8 @@
 {% block content %}
 
 <h1>On My Shelf:</h1>
-<p>Click a game to see where you left off</p>
-
+<hr>
+<h3>Click a game to see where you left off</h3>
 {% for game in games %}
   {% if game.playing %}
     <div class="card blue lighten-4 ">
@@ -23,10 +23,19 @@
       </div>
     </div>
   {% endif %}
-{% endfor %}
+  {% endfor %}
+  <!-- {% if not games.playing %}
+  <h1>none</h1>
+  {% endif %} -->
+
+
+
+
 
 <div class="col s6">
-  <h1>Off My Shelf</h1>
+  <h1>Off My Shelf:</h1>
+  <hr>
+  <br>
   {% for game in games %}
     {% if not game.playing %}
       <div class="card">
