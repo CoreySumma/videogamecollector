@@ -6,7 +6,7 @@
 <h3>Click a game to see where you left off</h3>
 {% for game in games %}
   {% if game.playing %}
-    <div class="card blue lighten-4 ">
+    <div class="card grey lighten-2 ">
       <div class="card-content">
         <a href="{% url 'detail' game.id %}">
           <span class="card-title">{{ game.title }}</span>

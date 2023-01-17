@@ -1,3 +1,12 @@
+:root {
+  /* Color synced with videogame controller @ home screen */
+  --color-grey: rgb(180, 177, 172);
+  --color-dark-grey: rgb(94, 96, 96);
+  --color-green: rgb(0, 128, 100);
+  --color-blue: rgb(13, 67, 134);
+  --color-red: rgb(223, 61, 73);
+  --color-yellow: rgb(254, 182, 82);
+}
 
 body {
   display: flex;
