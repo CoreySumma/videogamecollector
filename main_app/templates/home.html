@@ -2,11 +2,35 @@
 {% block content %}
 
 <h1 class="center">Welcome!</h1>
+<img src="../static/images/controller.png" alt="" class="home_image">
 <hr>
+
+<div class="carousel">
+  <a class="carousel-item" href="#one"><img src="../static/images/returnal.webp"></a>
+  <a class="carousel-item" href="#two"><img src="../static/images/cyberpunk.jpeg"></a>
+  <a class="carousel-item" href="#three"><img src="../static/images/littlenightmares.jpeg"></a>
+  <a class="carousel-item" href="#four"><img src="../static/images/melenia.jpeg"></a>
+  <a class="carousel-item" href="#five"><img src="../static/images/inside.png"></a>
+  <a class="carousel-item" href="#six"><img src="../static/images/diablo.jpeg"></a>
+  <a class="carousel-item" href="#seven"><img src="../static/images/lastofus.jpeg"></a>
+</div>
+
 <div class="center">
 <h4>This app was designed to help you get organized, and stay sharp when goin on all of your digital adventures.</h4>
-<h4>Please feel free so create an account and explore</h4>
-<img src="../static/images/controller.png" alt="" class="home_image">
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var options = {
+      duration : 300,
+      shift : 0
+    }
+    var instances = M.Carousel.init(elems, options);
+    setInterval(function(){
+        instances[0].next();
+    }, 2500);
+  });
+</script>
 
 {% endblock %}

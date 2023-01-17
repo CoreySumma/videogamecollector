@@ -9,7 +9,7 @@
     <p>{{ game.progress|linebreaks }}</p>
     <div class="card-action">
       <a href="{% url 'games_update' game.id %}">Update My Progress</a>
-      <a href="{% url 'games_delete' game.id %}">Remove From My Shelf</a>
+      <a href="{% url 'games_delete' game.id %}">Delete This Game</a>
     </div>
   </div>
   <div class="center">

@@ -34,7 +34,11 @@ footer.page-footer {
 }
 
 .home_image {
-  width: 50%;
+  width: 20%;
   height: auto;
+}
+
+.carousel .carousel-item {
+  width: 50%;
 }
 
