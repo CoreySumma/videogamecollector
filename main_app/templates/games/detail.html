@@ -12,6 +12,18 @@
       <a href="{% url 'games_delete' game.id %}">Remove From My Shelf</a>
     </div>
   </div>
+  <div class="center">
+    {% for photo in game.photo_set.all %}
+      <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
+    <div class="card-panel center-align">No Photos Uploaded</div>
+    {% endfor %}
+    <form action="{% url 'add_photo' game.id %}" enctype="multipart/form-data" method="POST" class="card-panel center-align">
+      {% csrf_token %}
+      <input type="file" name="photo-file">
+      <button type="submit" class="btn">Upload Photo</button>
+    </form>
+  </div>
 </div>
 
 {% endblock %}

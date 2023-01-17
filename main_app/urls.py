@@ -18,4 +18,6 @@ urlpatterns = [
   path('games/<int:game_id>/assoc_game/', views.assoc_game, name='assoc_game'),
   # UNASSOCIATE PLAYING (also not class based)
   path('games/<int:game_id>/unassoc_game/', views.unassoc_game, name='unassoc_game'),
+  # ADD PHOTO FOR GAME
+  path('games/<int:game_id>/add_photo/', views.add_photo, name='add_photo'),
 ]
