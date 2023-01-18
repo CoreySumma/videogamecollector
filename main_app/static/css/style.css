@@ -1,5 +1,5 @@
 :root {
-  /* Color synced with videogame controller @ home screen */
+  /* Color synced with videogame controller img */
   --color-grey: rgb(180, 177, 172);
   --color-dark-grey: rgb(94, 96, 96);
   --color-green: rgb(0, 128, 100);
@@ -12,9 +12,12 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* background-image: url("../images/controller.png");
+  /* background-image: url("../images/videogameBG.jpeg"); */
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: black;
 }
 
 main {
@@ -38,7 +41,20 @@ footer.page-footer {
   height: auto;
 }
 
+/* .logo {
+  width: 5vmin;
+  height: auto;
+} */
+
 .carousel .carousel-item {
   width: 50%;
 }
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* background-color: rgb(137, 137, 137); */
+}
+
 

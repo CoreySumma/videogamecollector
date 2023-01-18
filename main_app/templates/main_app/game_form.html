@@ -7,10 +7,10 @@
 {% else %}
   <h1>Let's go on an adventure</h1>
 {% endif %}
-<form action="" method="POST">
+<form class="white" action="" method="POST">
   {% csrf_token %}
   <table>
-    {{ form.as_table }}
+    {{ form.as_ul }}
   </table>
   <input type="submit" value="Submit" class="btn">
 </form>
