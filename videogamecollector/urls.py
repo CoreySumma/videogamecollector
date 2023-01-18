@@ -20,4 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
+    # Additional path for credentials --> include() 
+    # gives access to ALL name/pw paths provided by django auth
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
