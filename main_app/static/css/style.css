@@ -13,7 +13,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
   /* background-image: url("../images/videogameBG.jpeg"); */
-  background-repeat: no-repeat;
+  /* background-color: rgb(180, 177, 172); */
+  background-repeat: repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -41,10 +42,22 @@ footer.page-footer {
   height: auto;
 }
 
+/* .card_image {
+  margin-top: .4rem;
+  width: 22rem;
+  height: auto;
+} */
+
 /* .logo {
   width: 5vmin;
   height: auto;
 } */
+
+#btn_large {
+  word-wrap: break-word !important;
+  width: 100% !important;
+  min-width: max-content !important;
+}
 
 .carousel .carousel-item {
   width: 50%;
