@@ -3,6 +3,7 @@ import boto3
 import os
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -10,9 +11,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Game, Photo
 
 # Create your views here.
-# Define the home view
-
-
 def home(request):
     return render(request, 'home.html')
 
@@ -46,6 +44,15 @@ def games_index(request):
     games = Game.objects.filter(user=request.user)
     return render(request, 'games/index.html', {
         'games': games
+    })
+
+@login_required
+def games_gallery(request):
+    user = request.user
+    games = Game.objects.filter(user=request.user)
+    return render(request, 'games/gallery.html', {
+        'games': games,
+        'username' : user.username
     })
 
 

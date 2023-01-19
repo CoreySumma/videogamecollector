@@ -42,6 +42,16 @@ footer.page-footer {
   height: auto;
 }
 
+.about_image {
+  width: 35%;
+  height: auto;
+}
+
+.gallery_image {
+  width: 15%;
+  height: auto;
+}
+
 /* .card_image {
   margin-top: .4rem;
   width: 22rem;
@@ -61,6 +71,11 @@ footer.page-footer {
 
 .carousel .carousel-item {
   width: 50%;
+}
+
+#largecara {
+  width: 80%;
+  height: auto;
 }
 
 .icon-container {

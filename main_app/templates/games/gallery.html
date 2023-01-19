@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="center">
+  <h1>{{username}}'s Gallery</h1>
+  <img class="gallery_image" src="../../static/images/gallery.png" alt="">
+  <h3>Admire your collection</h3>
+  {% for game in games %}
+  <div class="carousel">
+    {% for photo in game.photo_set.all %}
+    <a class="carousel-item" href="#one"><img src="{{ photo.url }}"></a>
+    {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var options = {
+      duration : 300,
+      shift : 0
+    }
+    var instances = M.Carousel.init(elems, options);
+    setInterval(function(){
+        instances[0].next();
+    }, 2500);
+  });
+</script>
+{% endblock %}

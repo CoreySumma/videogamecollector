@@ -8,6 +8,8 @@ urlpatterns = [
   path('accounts/signup/', views.signup, name='signup'),
   # ALL GAMES
   path('games/', views.games_index, name='index'),
+  # ALL GAMES GALLERY
+  path('games/gallery', views.games_gallery, name='gallery'),
   # GAME DETAIL
   path('games/<int:game_id>/', views.games_detail, name='detail'),
   # CREATE NEW GAME ----> CBV(class based view)
