@@ -7,7 +7,7 @@
 {% for game in games %}
   {% if game.playing %}
   <div class="col s12 m6">
-    <div class="card horizontal transparent flow-text" style="border: 1px solid white;">
+    <div class="card horizontal transparent flow-text" style="border: 1px solid black;">
       <div class="card-image">
         {% for photo in game.photo_set.all %}
             <img src="{{photo.url}}">
@@ -27,8 +27,11 @@
   </div>
     <form action="{% url 'unassoc_game' game_id=game.id %}" method="POST">
       {% csrf_token %}
-      <button id="btn_large" type="submit" class="btn-large black bottom">Remove From My shelf</button>
+      <button id="btn_large" type="submit" class="btn-large black bottom" style="border: 1px solid white;">Remove From My shelf</button>
     </form>
+    <hr>
+    <br>
+    <br>
   {% endif %}
   {% empty %}
   <h1 class="red-text">Add A Game(Nerd)</h1>
@@ -53,10 +56,10 @@
           <br>
           <p>{{ game.description }}</p>
         </div>
-        <div class="card-action">
+        <div class="card-action center">
           <form action="{% url 'assoc_game' game_id=game.id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn-large black center">I wanna play this!</button>
+            <button type="submit" class="btn-large black" style="border: 1px solid white;">I wanna play this!</button>
           </form>
         </div>
       </div>
