@@ -27,7 +27,7 @@
   </div>
     <form action="{% url 'unassoc_game' game_id=game.id %}" method="POST">
       {% csrf_token %}
-      <button id="btn_large" type="submit" class="btn-large black bottom" style="border: 1px solid white;">Remove From My shelf</button>
+      <button id="btn_large" type="submit" class="waves-effect waves-light btn-large black bottom" style="border: 1px solid white;">Remove From My shelf</button>
     </form>
     <hr>
     <br>
@@ -59,7 +59,7 @@
         <div class="card-action center">
           <form action="{% url 'assoc_game' game_id=game.id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn-large black" style="border: 1px solid white;">I wanna play this!</button>
+            <button type="submit" class="waves-effect waves-light btn-large black" style="border: 1px solid ;">Add to my shelf</button>
           </form>
         </div>
       </div>

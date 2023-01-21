@@ -3,9 +3,9 @@
 {% block content %}
 
 <div class="center">
-  <h1>{{username}}'s Gallery</h1>
-  <img class="gallery_image" src="../../static/images/gallery.png" alt="">
+  <h1><u>{{username}}'s Gallery</u></h1>
   <h3>Admire your collection!</h3>
+  <img class="gallery_image" src="../../static/images/gallery.png" alt="">
 </div>
 <hr>
 {% for game in games %}
@@ -17,7 +17,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var options = {
       duration: 300,

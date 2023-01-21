@@ -5,7 +5,7 @@
 <h4>This will remove {{object.title}} from your shelf.</h4>
 <form action="" method="POST">
   {% csrf_token %}
-  <input type="submit" value="Yep!" class="btn">
+  <input type="submit" value="Yep!" class="waves-effect waves-light btn-large black" style="border: 1px solid white;">
   <a href="{ url 'detail' game.id }">Cancel</a>
 </form>
 

@@ -3,59 +3,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Videgame Shelf</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-  <!-- Fonts -->
-  <!-- Gamer Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dosis:wght@300&family=Gemunu+Libre:wght@200&family=Open+Sans:wght@300&display=swap"
-    rel="stylesheet">
-  <!-- Body Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dosis:wght@300&family=Gemunu+Libre:wght@200&family=Monda&family=Open+Sans:wght@300&display=swap"
-    rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Videgame Shelf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonts -->
+    <!-- Gamer Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dosis:wght@300&family=Gemunu+Libre:wght@200&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet">
+    <!-- Body Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dosis:wght@300&family=Gemunu+Libre:wght@200&family=Monda&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet">
+  </head>
 
-<body>
-  <header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper black">
-        <ul>
-          <li><a href="/" class="center brand-logo gamer-font">Game_Shelf</a></li>
-        </ul>
-        <ul class="right gamer-font">
-          <li><a href="{% url 'about' %}">About</a></li>
+  <body>
+    <header class="navbar-fixed">
+      <nav class="nav-extended-black">
+        <div class="nav-wrapper black">
+          <ul>
+            <li><a href="/" class="center brand-logo gamer-font">Game_Shelf</a></li>
+          </ul>
+          <ul class="right gamer-font">
+            <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'games_create' %}">Add Game</a></li>
-          <li><a href="{% url 'index' %}">My Games</a></li>
-          <li><a href="{% url 'gallery' %}">My Gallery</a></li>
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
-        </ul>
-        <ul class="left gamer-font">
-          <li><a class="gamer-font" href="javascript:history.back()">Go Back</a></li>
-        </ul>
-        {% else %}
-        <li><a class="gamer-font" href="{% url 'login' %}">Log In</a></li>
-        <li><a class="gamer-font" href="{% url 'signup' %}">Create Account</a></li>
-        {% endif %}
-      </div>
-    </nav>
-  </header>
-  <main class="container">
-    {% block content %}
-    {% endblock %}
-  </main>
-</body>
+            <li><a href="{% url 'games_create' %}">Add Game</a></li>
+            <li><a href="{% url 'index' %}">All Games</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          </ul>
+          <ul class="left gamer-font">
+            <li><a class="gamer-font" href="javascript:history.back()">Go Back</a></li>
+          </ul>
+          {% else %}
+            <li><a class="gamer-font" href="{% url 'login' %}">Log In</a></li>
+            <li><a class="gamer-font" href="{% url 'signup' %}">Create Account</a></li>
+          {% endif %}
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
 </html>
+     
+
