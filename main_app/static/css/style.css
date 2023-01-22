@@ -1,5 +1,5 @@
 :root {
-  /* Color synced with videogame controller img */
+  /* Color synced with videogame nintendo controller*/
   --color-grey: rgb(180, 177, 172);
   --color-dark-grey: rgb(94, 96, 96);
   --color-green: rgb(0, 128, 100);
@@ -82,4 +82,23 @@ footer.page-footer {
   background-image: url('../images/fireworks-.png');
   background-size: cover;
 }
+
+.waves-effect.waves-light.btn-large.black:hover {
+  /* I know this is not the best way!!! Apologies */
+  background-color: white!important;
+  color: black!important;
+  border: 1px solid black!important;
+}
+
+input {
+  font-family: 'Monda', sans-serif;
+  color: black;
+}
+
+.input:hover {
+  /* I know this is not the best way!!! Apologies */
+  background-color: white!important;
+  border: 1px solid black!important;
+}
+
 

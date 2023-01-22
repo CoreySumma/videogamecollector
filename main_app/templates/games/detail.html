@@ -21,7 +21,7 @@
     <form action="{% url 'add_photo' game.id %}" enctype="multipart/form-data" method="POST" class="card-panel center-align">
       {% csrf_token %}
       <input type="file" name="photo-file">
-      <button type="submit" class="btn-large black" style="border: 1px solid white;">Upload Photo</button>
+      <button type="submit" class="waves-effect waves-light btn-large black" style="border: 1px solid white;">Upload Photo</button>
     </form>
   </div>
 </div>
