@@ -12,7 +12,11 @@
   <table>
     {{ form.as_p }}
   </table>
-  <button type="submit" value="Submit" class="waves-effect waves-light btn-large black" style="border: 1px solid white;">Add To Collection</button>
+{% if object %}
+  <button type="submit" value="Submit" class="waves-effect waves-light btn-large black" style="border: 1px solid white;">Update My Progress</button>
+{% else %}
+  <button type="submit" value="Submit" class="waves-effect waves-light btn-large black" style="border: 1px solid white;">Add to my collection</button>
+{% endif %}
 </form>
 
 {% endblock %}

@@ -3,18 +3,18 @@
 {% block content %}
 
 <div class="center">
-  <h1><u>{{username}}'s Gallery</u></h1>
-  <h3>Admire your collection!</h3>
+  <h2><u>{{username}}'s Gallery</u></h2>
+  <!-- <h3>Admire your collection!</h3> -->
   <img class="gallery_image" src="../../static/images/gallery.png" alt="">
 </div>
 <hr>
 {% for game in games %}
-<div class="carousel">
-  {% for photo in game.photo_set.all %}
-    <a class="carousel-item" href="#one"><img src="{{ photo.url }}"></a>
-  {% endfor %}
+  <div class="carousel">
+    {% for photo in game.photo_set.all %}
+      <a class="carousel-item" href="#one"><img src="{{ photo.url }}"></a>
+    {% endfor %}
 {% endfor %}
-</div>
+  </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
