@@ -111,8 +111,7 @@ def add_photo(request, game_id):
         if photo_file:
             s3 = boto3.client('s3')
             # Generate a unique key for the file
-            key = uuid.uuid4().hex[:6] + \
-                photo_file.name[photo_file.name.rfind('.'):]
+            key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
             try:
                 # Delete the existing photo
                 game.photo_set.all().delete()
