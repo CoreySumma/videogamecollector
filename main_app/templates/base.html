@@ -38,29 +38,47 @@
           <ul>
             <li><a href="/" class="center brand-logo gamer-font">|&nbsp;Game_Shelf&nbsp;|</a></li>
           </ul>
-          <ul class="right gamer-font">
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down gamer-font">
             <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'games_create' %}">Add Game</a></li>
             <li><a href="{% url 'index' %}">All Games</a></li>
             <li><a href="{% url 'gallery' %}">Gallery</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
-          </ul>
-          <ul class="left gamer-font">
-            <li><a class="gamer-font" href="javascript:history.back()">Go Back</a></li>
-          </ul>
           {% else %}
             <li><a class="gamer-font" href="{% url 'login' %}">Log In</a></li>
             <li><a class="gamer-font" href="{% url 'signup' %}">Create Account</a></li>
           {% endif %}
+          </ul>
         </div>
       </nav>
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="{% url 'about' %}">About</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="{% url 'games_create' %}">Add Game</a></li>
+        <li><a href="{% url 'index' %}">All Games</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'logout' %}">Log Out</a></li>
+      {% else %}
+        <li><a class="gamer-font" href="{% url 'login' %}">Log In</a></li>
+        <li><a class="gamer-font" href="{% url 'signup' %}">Create Account</a></li>
+      {% endif %}
+      </ul>
     </header>
     <main class="container">
       {% block content %}
       {% endblock %}
     </main>
+    
+    <script>
+      $(document).ready(function () {
+        $('.sidenav').sidenav();
+      });
+    </script>
+
   </body>
+</html>
 </html>
      
 
